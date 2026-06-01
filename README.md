@@ -1,7 +1,7 @@
 # image-predicition
 # 🧠 Image Prediction API
 
-A browser-based image analysis tool powered by Claude's vision model. Upload any image and get AI-generated labels, confidence scores, scene descriptions, and metadata — no backend required.
+A browser-based image analysis tool. Upload any image and get AI-generated labels, confidence scores, scene descriptions, and metadata — no backend required.
 
 ## ✨ Features
 
