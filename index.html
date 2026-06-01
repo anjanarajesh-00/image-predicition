@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Prediction API</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.x/dist/tabler-icons.min.css">
+  <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+<div class="wrapper">
+
+  <header>
+    <h1><i class="ti ti-brain" style="vertical-align:-3px; margin-right:8px; color:#185FA5"></i>Image Prediction API</h1>
+    <p>Upload an image and get AI-powered labels, confidence scores, scene description, and metadata.</p>
+  </header>
+
+  <div class="api-key-bar">
+    <label for="apiKey"><i class="ti ti-key" style="font-size:15px; vertical-align:-2px; margin-right:4px"></i>API Key</label>
+    <input type="password" id="apiKey" placeholder="sk-ant-api03-… (required)">
+    <i class="ti ti-eye-off" id="keyToggleIcon" style="font-size:16px; cursor:pointer; color:var(--text-secondary)" onclick="toggleKeyVisibility()" title="Toggle visibility"></i>
+  </div>
+
+  <div class="card">
+    <div class="drop-zone" id="dropZone">
+      <i class="ti ti-photo-up"></i>
+      <h2>Drop an image here</h2>
+      <p>or click to browse — JPG, PNG, WebP, GIF</p>
+      <input type="file" id="fileInput" accept="image/*">
+    </div>
+    <img id="preview" alt="Uploaded image preview">
+  </div>
+
+  <div class="card">
+    <p class="section-label">Custom instruction (optional)</p>
+    <textarea id="customPrompt" placeholder="e.g. identify objects, describe the scene, read text in the image, classify product category, estimate age…"></textarea>
+    <div class="btn-row">
+      <button onclick="clearAll()"><i class="ti ti-trash"></i> Clear</button>
+      <button class="primary" id="analyzeBtn" onclick="analyze()" disabled>
+        <i class="ti ti-brain"></i> Analyze image
+      </button>
+    </div>
+    <div class="error" id="errorMsg"></div>
+  </div>
+
+  <div class="results card" id="results"></div>
+
+  <footer>
+    Powered by <a href="https://www.anthropic.com" target="_blank">Anthropic Claude</a> · Model: claude-sonnet-4-20250514
+  </footer>
+
+</div>
+<script src="src/js/config.js"></script>
+<script src="src/js/ui.js"></script>
+<script src="src/js/api.js"></script>
+<script src="src/js/main.js"></script>
+</body>
+</html>
